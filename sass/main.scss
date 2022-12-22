@@ -19,6 +19,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	background-color: $light-gray;
+
 	.steps {
 		display: flex;
 		justify-content: space-evenly;
@@ -59,6 +60,13 @@ body {
 				border: 2px solid $pastel-blue;
 				color: $black;
 			}
+		}
+
+		.step-active {
+			cursor: pointer;
+			background-color: $pastel-blue;
+			border: 2px solid $pastel-blue;
+			color: $black;
 		}
 	}
 
@@ -102,27 +110,146 @@ body {
 			align-self: flex-start;
 			width: 100%;
 
-			&__label {
-				margin-bottom: 0.2em;
+			&-input-upper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 0.1em;
+			}
+
+			&__error {
+				display: none;
+				color: $strawberry-red;
+				align-self: flex-end;
+				font-size: 1.2rem;
+				font-weight: 700;
+
+				&-active {
+					display: flex;
+				}
 			}
 
 			&__input {
+				padding: 1em 0.8em;
 				margin-bottom: 1.5em;
-				padding: 0.8em;
 				width: 100%;
 				border-radius: 4px;
+				font-weight: bold;
 				border: 1px solid $cool-gray;
+
+				&-error {
+					border: 1px solid $strawberry-red;
+				}
 			}
+		}
+	}
+
+	.plan-buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1em;
+		margin: 0.5em 0;
+
+		.plan-button {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			padding: 1em;
+			width: 100%;
+			border-radius: 10px;
+			border: 1px solid $light-gray;
+			cursor: pointer;
+			transition: color 0.3s, border 0.3s;
+			&-text {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4em;
+				margin-left: 0.8em;
+				text-align: left;
+
+				&__option {
+					font-size: 1.4rem;
+					font-weight: 700;
+					color: $marine-blue;
+				}
+
+				&__price {
+					color: $cool-gray;
+				}
+
+				&__time {
+					font-size: 1.2rem;
+					font-weight: 500;
+					color: $marine-blue;
+					font-weight: bold;
+				}
+			}
+
+			&:hover {
+				background-color: $magnolia;
+				border: 1px solid $purplish-blue;
+			}
+
+			&:focus {
+				background-color: $magnolia;
+				border: 1px solid $purplish-blue;
+			}
+		}
+	}
+
+	.plan-term {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		padding: 1em;
+		margin-top: 1.5em;
+		background-color: rgba($light-gray, 0.4);
+		border-radius: 10px;
+
+		&__toggle {
+			position: relative;
+			width: 3em;
+			height: 1.5em;
+			border-radius: 20px;
+			box-shadow: inset 0 0 5px rgba($black, 0.2);
+			background-color: $marine-blue;
+			cursor: pointer;
+
+			&::before {
+				content: "";
+				position: absolute;
+				height: 1.2em;
+				width: 1.2em;
+				top: 50%;
+				left: 0.2em;
+				transform: translateY(-50%);
+				border-radius: 20px;
+				background-color: $white;
+				transition: left 0.3s;
+			}
+
+			&:checked::before {
+				left: 1.5em;
+			}
+		}
+
+		&__option {
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: $marine-blue;
 		}
 	}
 }
 
 .desktop {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	padding: 2em;
 	.btn-next {
-		align-self: flex-end;
+		align-self: flex-start;
 	}
 }
 
@@ -142,6 +269,17 @@ body {
 	}
 }
 
+.btn-back {
+	font-weight: 700;
+	color: $cool-gray;
+	cursor: pointer;
+	transition: color 0.3s;
+
+	&:hover {
+		color: $marine-blue;
+	}
+}
+
 @media (min-width: 768px) {
 	body {
 		display: flex;
@@ -154,36 +292,58 @@ body {
 		display: flex;
 		flex-direction: row;
 		padding: 1em;
+		width: 80%;
+		max-width: 60em;
 		border-radius: 10px;
 		background-color: $white;
-		width: 50%;
 
 		.steps {
 			display: flex;
 			justify-content: flex-start;
 			height: 40em;
+			width: 35%;
 			border-radius: 10px;
 			background-image: url(./../assets/images/bg-sidebar-desktop.svg);
-			width: 35%;
 
 			&-box {
 				display: flex;
 				justify-content: flex-start;
 				align-items: flex-start;
 				flex-direction: column;
-				gap: 2em;
+				gap: 3em;
 
 				.step {
+					display: flex;
 					width: 40px;
 					height: 40px;
+
+					&-box {
+						display: flex;
+
+						&-next {
+							padding: 0.3em 0;
+							margin-left: 0.5em;
+						}
+					}
+
+					&__digit,
+					&__name {
+						display: block;
+						text-transform: uppercase;
+
+						color: $white;
+					}
+
+					&__name {
+						margin-top: 0.2em;
+						font-weight: 500;
+					}
+
+					&__digit {
+						font-size: 1rem;
+					}
 				}
 			}
-		}
-
-		.mobile {
-			display: flex;
-			align-self: flex-end;
-			transform: translateY(8em);
 		}
 
 		.info-box {
@@ -205,7 +365,44 @@ body {
 
 		.form {
 			gap: 0.5em;
-			&__input {
+		}
+
+		.mobile {
+			display: flex;
+			justify-content: space-between;
+			transform: translateY(8em);
+
+			.btn-next {
+				align-self: flex-start;
+			}
+		}
+
+		.plan-buttons {
+			display: flex;
+			flex-direction: row;
+
+			.plan-button {
+				position: relative;
+				flex-direction: column;
+				height: 12em;
+
+				&__icon {
+					width: 3em;
+					height: 3em;
+					align-self: flex-start;
+
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				&-text {
+					position: absolute;
+					left: 1em;
+					bottom: 1em;
+					margin-left: 0;
+				}
 			}
 		}
 	}

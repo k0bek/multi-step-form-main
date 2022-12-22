@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <main class="main">
+  <!-- <main class="main">
 
     <header class="header steps">
 
@@ -22,66 +22,194 @@
           <div class="step">
             <div class="step__number"><span class="step__number-span">1</span></div>
           </div>
-          <p class="step__digit">Step 1</p>
-          <p class="step__name">Your Info</p>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
         </div>
 
         <div class="step-box">
           <div class="step">
             <div class="step__number"><span class="step__number-span">1</span></div>
           </div>
-          <p class="step__digit">Step 1</p>
-          <p class="step__name">Your Info</p>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
         </div>
 
         <div class="step-box">
           <div class="step">
             <div class="step__number"><span class="step__number-span">1</span></div>
           </div>
-          <p class="step__digit">Step 1</p>
-          <p class="step__name">Your Info</p>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
         </div>
 
         <div class="step-box">
           <div class="step">
             <div class="step__number"><span class="step__number-span">1</span></div>
           </div>
-          <p class="step__digit">Step 1</p>
-          <p class="step__name">Your Info</p>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
         </div>
       </div>
 
     </header>
 
     <section class="info-box">
+
       <div class="info">
         <p class="info__heading">Personal info</p>
         <span class="info__provide">Please provide your name, email adress, and phone number.</span>
       </div>
 
       <form class="form" method="get">
-
-        <label class="form__label" for="name">Name</label>
-        <input aria-label="Enter your name" id="name" class="form__input form__input--name" type="text"
+        <div class="form-input-upper">
+          <label class="form__label" for="name">Name</label>
+          <span class="form__error">This field is required!</span>
+        </div>
+        <input aria-label="Enter your name" id="name" class="form__input form__input--name error-input" type="text"
           placeholder="e.g Stephen King">
 
-        <label class="form__label" for="mail">Email Adress</label>
+        <div class="form-input-upper">
+          <label class="form__label" for="mail">Email Adress</label>
+          <span class="form__error">This field is required!</span>
+        </div>
         <input aria-label="Enter your email" id="mail" class="form__input form__input--mail" type="email"
           placeholder="e.g. stephenking@lorem.com">
 
-        <label class="form__label" for="number">Phone Number</label>
+        <div class="form-input-upper">
+          <label class="form__label" for="number">Phone Number</label>
+          <span class="form__error">This field is required!</span>
+        </div>
         <input aria-label="Enter your number" id="number" class="form__input form__input--number" type="tel"
           placeholder="e.g. +1234 567 890">
-
       </form>
+
       <div class="buttons mobile">
+        <button aria-label="Back step" class="btn-back" role="button">Go back</button>
         <button aria-label="Next step" class="btn-next" role="button">Next step</button>
       </div>
+
     </section>
+
   </main>
+
   <div class="buttons desktop">
+    <button aria-label="Next step" class="btn-back" role="button">Go back</button>
     <button aria-label="Next step" class="btn-next" role="button">Next step</button>
-  </div>
+  </div> -->
+  <!-- <main class="main">
+
+    <header class="header steps">
+
+      <div class="steps-box">
+        <div class="step-box">
+          <div class="step">
+            <div class="step__number"><span class="step__number-span">1</span></div>
+          </div>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step">
+            <div class="step__number"><span class="step__number-span">1</span></div>
+          </div>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step">
+            <div class="step__number"><span class="step__number-span">1</span></div>
+          </div>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step">
+            <div class="step__number"><span class="step__number-span">1</span></div>
+          </div>
+          <div class="step-box-next">
+            <p class="step__digit">Step 1</p>
+            <p class="step__name">Your Info</p>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <section class="info-box">
+
+      <div class="info">
+        <p class="info__heading">Personal info</p>
+        <span class="info__provide">Please provide your name, email adress, and phone number.</span>
+      </div>
+
+      <div class="plan-buttons">
+        <button class="plan-button">
+          <div class="plan-button__icon"><img src="./assets/images/icon-arcade.svg" alt=""></div>
+          <div class="plan-button-text">
+            <span class="plan-button-text__option">Arcade</span>
+            <span class="plan-button-text__price">$90/yr</span>
+            <span class="plan-button-text__time">2 months free</span>
+          </div>
+        </button>
+        <button class="plan-button">
+          <div class="plan-button__icon"><img src="./assets/images/icon-advanced.svg" alt=""></div>
+          <div class="plan-button-text">
+            <span class="plan-button-text__option">Advanced</span>
+            <span class="plan-button-text__price">$120/yr</span>
+            <span class="plan-button-text__time">2 months free</span>
+          </div>
+        </button>
+        <button class="plan-button">
+          <div class="plan-button__icon"><img src="./assets/images/icon-pro.svg" alt=""></div>
+          <div class="plan-button-text">
+            <span class="plan-button-text__option">Pro</span>
+            <span class="plan-button-text__price">$150/yr</span>
+            <span class="plan-button-text__time">2 months free</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="plan-term">
+        <p class="plan-term__option">Monthly</p>
+        <input class="plan-term__toggle" type="checkbox">
+        <p class="plan-term__option">Yearly</p>
+      </div>
+
+      <div class="buttons mobile">
+        <button aria-label="Next step" class="btn-back" role="button">Go back</button>
+        <button aria-label="Next step" class="btn-next" role="button">Next step</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div class="buttons desktop">
+    <button aria-label="Next step" class="btn-back" role="button">Go back</button>
+    <button aria-label="Next step" class="btn-next" role="button">Next step</button>
+  </div> -->
+
+  <main class="main" data-currentView="0"></main>
+
+
+  <script src="./js/main.js" type="module" defer></script>
 
 </body>
 
